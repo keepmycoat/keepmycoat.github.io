@@ -14,7 +14,7 @@ I intend to write a blog post and read (at least) one book every week in 2017. I
 need to get my creative juices flowing again.
 
 I'm trying my best to live a healthy lifestyle by going to bed and getting up on
-time, hit the gym a lot and watch my calories.
+time, hit the gym and watch my calories.
 
 [1]: https://safesurv.com
 [2]: http://climate.cae.tntech.edu/climate_web
