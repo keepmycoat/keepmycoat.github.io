@@ -1,0 +1,23 @@
+language: ruby
+rvm:
+  - 2.3.3
+
+script: bundle exec jekyll build
+
+branches:
+  only:
+    - jekyll
+
+sudo: false
+
+after_success:
+  - cd _site
+  - git init
+  - git config user.name "Shritesh Bhattarai"
+  - git config user.email "shritesh@shritesh.com"
+  - git remote add upstream "https://$GH_TOKEN@github.com/shritesh/shritesh.github.io.git"
+  - git fetch upstream
+  - git reset upstream/master
+  - git add -A .
+  - git commit -m "[TRAVIS] Build ${TRAVIS_COMMIT}"
+  - git push -q upstream HEAD:master

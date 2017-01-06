@@ -7,9 +7,6 @@ url: ""
 twitter_username: shritesh
 github_username:  shritesh
 
-permalink: /:title.html
-
-# Build settings
 markdown: kramdown
 theme: overkyll-jekyll-theme
 gems:
@@ -17,3 +14,16 @@ gems:
 exclude:
   - Gemfile
   - Gemfile.lock
+  - vendor
+
+permalink: /:title.html
+
+timezone: America/Chicago
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
