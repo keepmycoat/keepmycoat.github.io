@@ -1,0 +1,19 @@
+title: Shritesh
+email: shritesh@shritesh.com
+description: >
+  Shritesh Bhattarai is a web developer and loves to build things.
+baseurl: ""
+url: ""
+twitter_username: shritesh
+github_username:  shritesh
+
+permalink: /:title.html
+
+# Build settings
+markdown: kramdown
+theme: overkyll-jekyll-theme
+gems:
+  - jekyll-feed
+exclude:
+  - Gemfile
+  - Gemfile.lock
