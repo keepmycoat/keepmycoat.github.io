@@ -59,7 +59,7 @@ Now push your site to Github and Travis should build and deploy your site.
 
 ![Travis build status]({{ site.url }}/assets/images/travis-build-status.png)
 
-Congratulations, you can use any theme or gem on Github Pages now.
+Congratulations, you can now use any theme or gem on Github Pages.
 
 ---
 *Thank you for reading my first blog post. You can follow [@shritesh][20] on Twitter if you'd like.*
