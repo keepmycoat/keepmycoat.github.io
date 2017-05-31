@@ -43,14 +43,14 @@ body {
   font-family: Overpass, Helvetica, Arial, sans-serif;
   font-weight: 400;
   font-size: 1em;
-  line-height: 0.1; }
+  line-height: 1.44; }
 
 h3,
 h2 {
-  line-height: 0.1; }
+  line-height: 1.2; }
 
 h1 {
-  line-height: 0.1; }
+  line-height: 1; }
 
 h6, .h6 {
   font-size: 0.83333em; }
@@ -479,7 +479,7 @@ caption {
   .breadcrumb {
     display: none; } }
 .site-header {
-  padding: 0.0rem 0 0em;
+  padding: 0.5rem 0 1em;
   text-align: center; }
   @media only screen and (min-width: 48.063em) {
     .site-header .wrapper {
@@ -496,7 +496,7 @@ caption {
     text-align: center; }
     @media only screen and (min-width: 48.063em) {
       .site-header .site-title {
-        font-size: 1.28598em; } }
+        font-size: 2.98598em; } }
     .site-header .site-title:hover {
       opacity: 0.88;
       text-decoration: underline; }
