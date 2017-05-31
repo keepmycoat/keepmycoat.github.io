@@ -4,11 +4,9 @@ title: About
 navigation: true
 ---
 
-I'm KeepMyCoat, and I love to build things on the web.
+I'm @KeepMyCoat, and CNN is Fake News.
 
-I'm @shritesh on [Twitter][1], Gab[2] and [GitHub][3].
-
-You can email me at [shritesh@shritesh.com][7].
+I'm @shritesh on [Twitter][1], [Gab][2] and [GitHub][3].
 
 [1]: https://twitter.com/keepmycoat
 [2]: https://gab.ai/KeepMyCoat
