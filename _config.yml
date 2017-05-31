@@ -1,11 +1,11 @@
-title: Shritesh
-email: shritesh@shritesh.com
-description: >
-  Shritesh Bhattarai is a web developer and loves to build things.
+title: CNN Advertisers List
+#email: shritesh@shritesh.com
+#description: >
+#  Shritesh Bhattarai is a web developer and loves to build things.
 baseurl: ""
 url: ""
-twitter_username: shritesh
-github_username:  shritesh
+twitter_username: keepmycoat
+github_username:  keepmycoat
 
 markdown: kramdown
 theme: overkyll-jekyll-theme
