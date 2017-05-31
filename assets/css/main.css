@@ -179,8 +179,8 @@ p {
 .wrapper {
   margin-right: auto;
   margin-left: auto;
-  padding-right: 0.1em;
-  padding-left: 0.1em;
+  padding-right: 0.5em;
+  padding-left: 0.5em;
   max-width: 40em; }
 
 .grid {
@@ -479,7 +479,7 @@ caption {
   .breadcrumb {
     display: none; } }
 .site-header {
-  padding: 0.0rem 0 0em;
+  padding: 0.5rem 0 1em;
   text-align: center; }
   @media only screen and (min-width: 48.063em) {
     .site-header .wrapper {
@@ -490,13 +490,13 @@ caption {
   .site-header .site-title {
     display: block;
     margin: 0.5em auto;
-    font-size: 1.48832em;
+    font-size: 2.48832em;
     font-weight: 600;
     color: #000;
     text-align: center; }
     @media only screen and (min-width: 48.063em) {
       .site-header .site-title {
-        font-size: 1.48598em; } }
+        font-size: 2.98598em; } }
     .site-header .site-title:hover {
       opacity: 0.88;
       text-decoration: underline; }
@@ -530,7 +530,7 @@ caption {
       margin-left: 1em; }
 
 .exergue {
-  padding: 0rem;
+  padding: 1rem;
   width: 100%;
   text-align: center;
   color: #fff;
@@ -560,7 +560,7 @@ caption {
 
 .pagination a,
 .pagination .disabled {
-  padding: 0em 0.5em;
+  padding: 1em 1.5em;
   color: #333;
   border: 1px solid #595959;
   border-radius: 0.1875em;
