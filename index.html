@@ -6,12 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="alternate" type="application/rss+xml" title="Shritesh RSS Feed" href="/feed/"/>
+  <link rel="alternate" type="application/rss+xml" title="CNN Advertisers List RSS Feed" href="/feed/"/>
   <link rel="canonical" href="/">
 
-  <title>Shritesh</title>
-  <meta name="description" content="Shritesh Bhattarai is a web developer and loves to build things.
-">
+  <title>CNN Advertisers List</title>
+  <meta name="description" content="">
 
   <style type="text/css">
     
@@ -728,7 +727,7 @@ Licensed MIT
   <div class="wrapper">
 
     <div class="site-logo">
-      <a class="site-title" href="/">Shritesh</a>
+      <a class="site-title" href="/">CNN Advertisers List</a>
     </div>
 
     <nav class="nav-main" role="navigation">
@@ -766,69 +765,9 @@ Licensed MIT
       <div class="wrapper">
         
 <section class="post">
-  <h1><a href="/github-pages-external-themes-gems-travis.html">Using External Jekyll Themes and Gems on Github Pages with Travis CI</a></h1>
-  <p class="post-meta">07/01/2017</p>
-  <p>I recently decided to start blogging (for real, this time). As someone from the developer community, I know that <a href="https://pages.github.com/">Github Pages</a> is the <a href="https://github.com/search?q=github.io">one-true way</a> to host your website.</p>
-
-<p>Github Pages provides free hosting, git based deployment, support for custom domains and a lot of other nifty features. It uses <a href="http://jekyllrb.com/">Jekyll</a>, a static site generator which underwent a <a href="http://jekyllrb.com/news/2016/10/06/jekyll-3-3-is-here/">massive overhaul</a> recently and now includes gem based theming and plugins support. Previously, you had to include all the assets of the theme and there were only few plugins supported by default at the time.</p>
-
-<p>I was excited when I found out the <a href="https://github.com/bertrandkeller/overkyll-jekyll-theme">perfect theme</a> for my blog, but turns out Github Pages only supports a select few <a href="https://pages.github.com/themes/">themes</a> and <a href="https://pages.github.com/versions/">plugins</a>. I could still build the site on my machine and push it to Github, but that would defeat the purpose of using Jekyll in the first place.</p>
-
-<p>I Googled (more like <a href="https://duckduckgo.com">Duck Duck Go’d</a>) around figured out that using a continuous integration system like <a href="https://travis-ci.org/">Travis CI</a> (which is free for Open Source) was the proper way to do it. I also found a <a href="https://github.com/steveklabnik/automatically_update_github_pages_with_travis_example">nice example</a> on how to proceed forward. I’ve outline what I did below.</p>
-
-<h3 id="create-a-new-branch">Create a new branch</h3>
-<p>Github Pages <a href="https://help.github.com/articles/user-organization-and-project-pages/">builds from</a> the <code class="highlighter-rouge">master</code> branch for User or Organization Pages sites or the <code class="highlighter-rouge">gh-pages</code> branch for Project Pages sites. I created a new <code class="highlighter-rouge">jekyll</code> branch on <a href="https://github.com/shritesh/shritesh.github.io/tree/jekyll">my personal repository</a> for the source. It also makes things easier if you change the default branch in the repository settings.
-<img src="/assets/images/github-repository-default-branch.png" alt="Repository default branch" /></p>
-
-<h3 id="get-a-github-api-token">Get a Github API token</h3>
-<p>You will be using Travis CI to commit to the <code class="highlighter-rouge">default</code> or <code class="highlighter-rouge">gh-pages</code> branch. Using passwords is insecure to use for third party deployment, so Github provides <a href="https://github.com/blog/1509-personal-api-tokens">Personal Access Tokens</a> to authenticate. Create a token using <a href="https://github.com/settings/tokens">this link</a> and select the <code class="highlighter-rouge">public_repo</code> scope (or the <code class="highlighter-rouge">repo</code> scope if you are using a private repository). Make sure you keep the token safely or someone else might use it to authenticate as you on Github.</p>
-
-<h3 id="configure-travis">Configure Travis</h3>
-<p>Go to <a href="">https://travis-ci.org/profile</a> and enable your repository by toggling the switch. Add your Personal Access Token as an environment variable. The token is <a href="https://docs.travis-ci.com/user/environment-variables/#Defining-Variables-in-Repository-Settings">stored encrypted</a> on their servers and only decrypted during builds.  You can choose any name for the environment variable which you will be using later (I used <code class="highlighter-rouge">GH_TOKEN</code>). I also selected the “Build only if .travis.yml is present” and “Build pushes” options to simply things. The former options prevents the deployed repository from being built (Jekyll does not copy that file to the <code class="highlighter-rouge">_site</code> directory) while the later runs the build process as soon as you push to Github.</p>
-
-<p><img src="/assets/images/travis-repository-settings.png" alt="Travis repository settings" /></p>
-
-<p>Travis is configured using a <code class="highlighter-rouge">.travis.yml</code> file on the repository. You can see my configuration <a href="https://github.com/shritesh/shritesh.github.io/blob/jekyll/.travis.yml">here</a>.</p>
-
-<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="s">language</span><span class="pi">:</span> <span class="s">ruby</span>
-<span class="s">rvm</span><span class="pi">:</span>
-  <span class="pi">-</span> <span class="s">2.4.0</span>
-<span class="s">script</span><span class="pi">:</span> <span class="s">bundle exec jekyll build</span>
-<span class="s">branches</span><span class="pi">:</span>
-  <span class="s">only</span><span class="pi">:</span>
-    <span class="pi">-</span> <span class="s">jekyll</span>
-<span class="s">sudo</span><span class="pi">:</span> <span class="s">false</span>
-<span class="s">after_success</span><span class="pi">:</span>
-  <span class="pi">-</span> <span class="s">cd _site</span>
-  <span class="pi">-</span> <span class="s">git init</span>
-  <span class="pi">-</span> <span class="s">git config user.name "Shritesh Bhattarai"</span>
-  <span class="pi">-</span> <span class="s">git config user.email "shritesh@shritesh.com"</span>
-  <span class="pi">-</span> <span class="s">git remote add upstream "https://$GH_TOKEN@github.com/shritesh/shritesh.github.io.git"</span>
-  <span class="pi">-</span> <span class="s">git fetch upstream</span>
-  <span class="pi">-</span> <span class="s">git reset upstream/master</span>
-  <span class="pi">-</span> <span class="s">git add -A .</span>
-  <span class="pi">-</span> <span class="s">git commit -m "[Build] ${TRAVIS_COMMIT}"</span>
-  <span class="pi">-</span> <span class="s">git push -q upstream HEAD:master</span></code></pre></figure>
-
-<p>The configuration is easy to understand. I set the language as Ruby and used the version <code class="highlighter-rouge">2.4.0</code> for Jekyll. Travis will then execute the script <code class="highlighter-rouge">bundle exec jekyll build</code> which compiles the site to <code class="highlighter-rouge">_site</code> directory. I have also configured it to build only on the <code class="highlighter-rouge">jekyll</code> branch of the repository.</p>
-
-<p>After it is successfully built, it changes into the <code class="highlighter-rouge">_site</code> directory, initializes an empty git repository, sets the git credentials to be me and adds an upstream repository using the token stored previously for authentication. It fetches the repository and stages the changes. The <code class="highlighter-rouge">TRAVIS_COMMIT</code> environment variable denotes the latest commit hash, which is used in the commit message. Then, it pushes it to the <code class="highlighter-rouge">master</code> <a href="https://github.com/shritesh/shritesh.github.io/tree/master">branch</a> on Github.</p>
-
-<p>You could also test your site using <code class="highlighter-rouge">html-proofer</code> gem as outlined in Jekyll’s <a href="http://jekyllrb.com/docs/continuous-integration/">documentation on continuous integration</a>.</p>
-
-<p>Similarly, you can also use Travis to <a href="https://docs.travis-ci.com/user/deployment">deploy to another service</a>, which I intend to do soon as Github Pages does not yet support HTTPS on custom domains.</p>
-
-<h3 id="push-your-jekyll-site">Push your Jekyll Site</h3>
-<p>Now push your site to Github and Travis should build and deploy your site.</p>
-
-<p><img src="/assets/images/travis-build-status.png" alt="Travis build status" /></p>
-
-<p>Congratulations, you can now use any theme or gem on Github Pages.</p>
-
-<hr />
-
-<p><em>Thank you for reading my first blog post. You can follow <a href="https://twitter.com/shritesh">@shritesh</a> on Twitter if you’d like.</em></p>
-
+  <h1><a href=""></a></h1>
+  <p class="post-meta"></p>
+  
 
 </section>
 
