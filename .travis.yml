@@ -15,7 +15,7 @@ after_success:
   - git init
   - git config user.name "keepmycoat"
   - git config user.email "bhollaram.parsad@gmail.com"
-  - git remote add upstream "https://$GH_TOKEN@github.com/shritesh/keepmycoat.github.io.git"
+  - git remote add upstream "https://$GH_TOKEN@github.com/keepmycoat/keepmycoat.github.io.git"
   - git fetch upstream
   - git reset upstream/master
   - git add -A .
