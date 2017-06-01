@@ -479,7 +479,7 @@ caption {
   .breadcrumb {
     display: none; } }
 .site-header {
-  padding: 0.5rem 0 1em;
+  padding: 0.0rem 0 0.1em;
   text-align: center; }
   @media only screen and (min-width: 48.063em) {
     .site-header .wrapper {
@@ -503,7 +503,7 @@ caption {
 
 .site-header nav a:hover, .site-header nav a:focus, .site-header nav a:active {
   text-decoration: none;
-  border-bottom: 2px solid #444; }
+  border-bottom: 0.1px solid #444; }
 
 .nav-main {
   display: flex;
