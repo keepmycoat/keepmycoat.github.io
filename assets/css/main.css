@@ -201,7 +201,7 @@ p {
   margin-left: auto;
   padding-right: 0.1em;
   padding-left: 0.1em;
-  max-width: 40em; }
+  max-width: 10em; }
 
 .grid {
   /* inline-block fallback for IE9 generation */
